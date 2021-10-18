@@ -1,3 +1,28 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+
+<meta charset="utf-8">
+<link rel="stylesheet" href="app/assets/stylesheets/tweets.scss">
+
+</head>
+<body>
+    <h1>Hello World</h1>
+
+<div class="time_line">
+    
+    <nav>
+  <ul id="upper_right_menu">
+      <!--カレントページを強調表示したい-->
+    <li>ツイート</li>
+    <li>ツイートと返信</li>
+    <li>メディア</li>
+    <li>いいね</li>
+    <div id="marker"></div>
+  </ul>
+</nav>
+
 <% if flash[:notice] %>
     <%= flash[:notice] %>
 <% end %>
@@ -13,3 +38,9 @@
 <% end %>
 
 <p><%= link_to '新規追加', new_tweet_path %></p>
+
+</div>
+
+</body>
+
+</html>
