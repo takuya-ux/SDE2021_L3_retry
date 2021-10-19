@@ -1,11 +1,23 @@
-<p>
-    <string>つぶやき：</string>
-    <%= @tweet.message %>
-</p>
+<div id="wrapper">
 
-<p>
-    <string>投稿日時：</string>
-    <%= @tweet.tdate %>
-</p>
-
-<%= link_to 'Back', root_path %>
+    <%= render 'left_column' %>
+    
+    <div class="right_column">
+        <div class="tweet">
+            
+            <p class="tweet_time">
+                <string>投稿日時：</string>
+                <%= @tweet.tdate %>
+            </p>
+            
+            <p class="tweet_text">
+                <string>つぶやき：</string>
+                <%= @tweet.message %>
+            </p>
+        
+            <div class="show_back" >
+                <%= link_to 'Back', root_path %>
+            </div>
+        </div>
+    </div>
+</div>

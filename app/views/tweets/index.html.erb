@@ -1,46 +1,59 @@
 <!DOCTYPE html>
 <html lang="ja">
 
-<head>
-
-<meta charset="utf-8">
-<link rel="stylesheet" href="app/assets/stylesheets/tweets.scss">
-
-</head>
-<body>
-    <h1>Hello World</h1>
-
-<div class="time_line">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="app/assets/stylesheets/tweets.scss">
+    </head>
     
-    <nav>
-  <ul id="upper_right_menu">
-      <!--カレントページを強調表示したい-->
-    <li>ツイート</li>
-    <li>ツイートと返信</li>
-    <li>メディア</li>
-    <li>いいね</li>
-    <div id="marker"></div>
-  </ul>
-</nav>
-
-<% if flash[:notice] %>
-    <%= flash[:notice] %>
-<% end %>
-
-<% @tweets.each do |e| %>
-    <p>
-    <%= e.message %>
-    <%= ((Time.current - e.tdate) / 60).to_i.to_s + '分前' %>
-    <%= link_to '削除', tweet_path(e), method: :delete %>
-    <%= link_to '表示', tweet_path(e) %>
-    <%= link_to '編集', edit_tweet_path(e) %>
-    </p>
-<% end %>
-
-<p><%= link_to '新規追加', new_tweet_path %></p>
-
-</div>
-
-</body>
+    <body>
+        <div id="wrapper">
+        <%= render 'left_column' %>
+            <div class="right_column">
+                <nav>
+                  <ul id="upper_right_menu">
+                      <!--カレントページを強調表示したい-->
+                    <li>ツイート</li>
+                    <li>ツイートと返信</li>
+                    <li>メディア</li>
+                    <li>いいね</li>
+                    <div id="marker"></div>
+                  </ul>
+                </nav>
+                
+                <div class="time_line">
+                    <% if flash[:notice] %>
+                        <%= flash[:notice] %>
+                    <% end %>
+                    
+                    <% @tweets.each do |e| %>
+                        <div class="tweet">
+                            <p>
+                                <p class="tweet_time">
+                                    <%= ((Time.current - e.tdate) / 60).to_i.to_s + '分前' %>
+                                </p>
+                                <p class="tweet_text">
+                                <%= e.message %>
+                                </p>
+                            </p>
+                            <p>
+                                <ul class="tweet_menus">
+                                    <li class="tweet_menu">
+                                        <%= link_to '削除', tweet_path(e), method: :delete %>
+                                    </li>
+                                    <li class="tweet_menu">
+                                        <%= link_to '表示', tweet_path(e) %>
+                                    </li>
+                                    <li class="tweet_menu">
+                                        <%= link_to '編集', edit_tweet_path(e) %>
+                                    </li>
+                                </ul>
+                            </p>
+                        </div>
+                    <% end %>
+                </div>
+            </div>
+        </div>
+    </body>
 
 </html>

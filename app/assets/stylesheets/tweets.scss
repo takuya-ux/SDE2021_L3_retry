@@ -27,6 +27,64 @@ $secondarycolor: #3E8760;
   box-sizing: border-box;
 }
 
+#wrapper{
+  display: flex;
+  margin: 5%;
+}
+
+.left_column{
+  flex: left;
+  width: 30%;
+    margin: 2%;}
+
+
+#left_menu{
+width: 100%;
+}
+
+#left_menu ul {
+list-style: none;
+margin: 0;
+padding: 0;
+}
+
+#left_menu li {
+margin: 0;
+padding: 0;
+margin: 1%;
+}
+
+#left_menu a {
+padding:7px 10px;
+display: block;
+width: 100% ;
+color: #111111;
+text-decoration: none;
+}
+
+#left_menu a:hover {
+color: #696969;
+width: 100% ;
+}
+
+#tweet_btn{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #333;
+  font-size: 18px;
+  font-weight: 700;
+  background-color: #cccccc;
+  border-radius: 50vh;
+}
+
+
+.right_column{
+  flex: right;
+  width: 70%;
+  margin: 2%;
+}
+
 #upper_right_menu{
   position: relative;
   list-style: none;
@@ -35,7 +93,7 @@ $secondarycolor: #3E8760;
   text-transform: uppercase;
   display: inline-block;
   padding: 0;
-  margin: 50px auto;
+  margin: auto;
   li{
     font-size: 0.8rem;
     display: inline-block;
@@ -68,6 +126,33 @@ li{
       @include transform(translate(#{(-1+$i)*$min-width},0));
     }
   }    
+}
+
+.tweet{
+  padding: 1%;
+  background: #ffffff;
+  overflow: hidden;
+  //max-width: 400px; ←コメントアウトする
+  margin: 1%;
+  font-size: 80%;
+  border: solid 1px #eeeeee;
+}
+
+.tweet_time{
+  text-align: right;
+}
+
+.tweet_text{
+  overflow-wrap: break-word;
+}
+
+.tweet_menus{
+  list-style: none;
+  display: flex;
+}
+
+.tweet_menu{
+  margin: auto;
 }
 
 
