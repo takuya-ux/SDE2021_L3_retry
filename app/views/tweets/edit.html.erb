@@ -1,18 +1,14 @@
 
 <div id="wrapper">
-    
     <%= render 'left_column' %>
     
     <div class="right_column">    
-
-    <%= render 'form',Tweet: @tweet %>
-    
-    
-    <%= form_for @tweet, url: {action: :update} do |f| %>
-        <%= f.label :message, 'つぶやき' %>
-        <%= f.text_field :message %>
-        <%= f.submit '更新' %>
-    <% end %>
-
+        <%= render 'form',Tweet: @tweet %>
+        
+        <%= form_for @tweet, url: {action: :update} do |f| %>
+            <%= f.label :message, 'つぶやき' %>
+            <%= f.text_field :message %>
+            <%= f.submit '更新' %>
+        <% end %>
     </div>
 </div>
