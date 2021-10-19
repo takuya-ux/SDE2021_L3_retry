@@ -67,8 +67,7 @@ color: #696969;
 width: 100% ;
 }
 
-#tweet_btn{
-  display: flex;
+#new_tweet_btn{
   justify-content: space-between;
   align-items: center;
   color: #333;
@@ -76,6 +75,7 @@ width: 100% ;
   font-weight: 700;
   background-color: #cccccc;
   border-radius: 50vh;
+  text-align: center;
 }
 
 
@@ -132,9 +132,7 @@ li{
   padding: 1%;
   background: #ffffff;
   overflow: hidden;
-  //max-width: 400px; ←コメントアウトする
   margin: 1%;
-  font-size: 80%;
   border: solid 1px #eeeeee;
 }
 
